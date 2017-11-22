@@ -2,8 +2,8 @@
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 
-canvas.height = window.innerHeight; // ctx. ?
-canvas.width = window.innerWidth;   // ctx. ?
+ctx.canvas.height = window.innerHeight;
+ctx.canvas.width = window.innerWidth;
 
 var matrix = "АБВГДЕЁЖЗИЙКЛМНОавгдеёжзийклмноПРСТУФХЦЧШЩЪЫЬЭЮЯпрстуфхцчшщъыьэюя";
 matrix = matrix.split('');
@@ -17,8 +17,6 @@ for (var xCoord = 0; xCoord < num_columns; xCoord++) {
 }
 
 function draw() {
-  // TODO: Make it so the background characters just show the previous letter, not all of them.
-    // Currently works on Vivaldi but none of the other tested browsers
   // Make the color of the first falling character white?
   ctx.fillStyle = "rgba(0, 0, 0, 0.04)";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -27,11 +25,13 @@ function draw() {
   ctx.font = font_size + "px arial";
 
   for (var i = 0; i < drops.length; i++) {
+    ctx.fillStyle = "rgba(0, 0, 0, 1)";
+    ctx.fillRect(i * font_size, drops[i] * font_size, font_size, font_size);
+
+    ctx.fillStyle = "#0F0";
     var text = matrix[Math.floor(Math.random() * matrix.length)];
     ctx.fillText(text, i * font_size, drops[i] * font_size);
 
-    //ctx.fillStyle = "rgba(0, 0, 0, 1)";
-    //ctx.fillRect(i * font_size, (drops[i] - 1) * font_size + Math.floor(font_size / 4.5), font_size, font_size);
     // TODO: Fix / make the canvas adjust to resize w/o redoing whole start animation
     // TODO: Make it so there is more overlap on phones
 

@@ -1,0 +1,29 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: black;
+  overflow-x: hidden;
+}
+
+#overlay {
+  position: relative;
+}
+
+canvas {
+  display: block;
+  z-index: -99;
+}
+
+#intro {
+  color: white;
+  font-family: Courier New;
+  font-size: 28px;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: perspective(1px) translateY(-50%);
+  text-align: center;
+}

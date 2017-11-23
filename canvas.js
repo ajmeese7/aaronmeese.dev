@@ -2,8 +2,8 @@
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 
-ctx.canvas.height = window.innerHeight;
-ctx.canvas.width = window.innerWidth;
+canvas.width = screen.width;
+canvas.height = screen.height;
 
 var matrix = "АБВГДЕЁЖЗИЙКЛМНОавгдеёжзийклмноПРСТУФХЦЧШЩЪЫЬЭЮЯпрстуфхцчшщъыьэюя";
 matrix = matrix.split('');
@@ -17,7 +17,9 @@ for (var xCoord = 0; xCoord < num_columns; xCoord++) {
 }
 
 function draw() {
-  // Make the color of the first falling character white?
+  var viewportHeight = (typeof window.innerHeight != 'undefined' ? window.innerHeight : document.body.offsetHeight);
+  document.getElementById("container").setAttribute("style","height:" + viewportHeight + "px")
+
   ctx.fillStyle = "rgba(0, 0, 0, 0.04)";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -32,7 +34,6 @@ function draw() {
     var text = matrix[Math.floor(Math.random() * matrix.length)];
     ctx.fillText(text, i * font_size, drops[i] * font_size);
 
-    // TODO: Fix / make the canvas adjust to resize w/o redoing whole start animation
     // TODO: Make it so there is more overlap on phones
 
     if (drops[i] * font_size > canvas.height && Math.random() > 0.975) {

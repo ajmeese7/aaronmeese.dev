@@ -8,8 +8,8 @@ body {
   overflow-x: hidden;
 }
 
-#overlay {
-  position: relative;
+#container {
+  overflow: hidden;
 }
 
 canvas {

@@ -17,6 +17,19 @@ canvas {
   z-index: -99;
 }
 
+/* TODO: Fix the falling letter size on mobile. Change word size? */
+@media only screen and (max-device-width: 600px) {
+  canvas {
+    width: 100%;
+    height: 100%;
+  }
+
+  #triangle {
+    width: 140px;
+    height: 140px;
+  }
+}
+
 #intro {
   color: white;
   font-family: Courier New;

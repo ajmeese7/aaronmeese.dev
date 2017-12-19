@@ -17,7 +17,6 @@ for (var xCoord = 0; xCoord < num_columns; xCoord++) {
 }
 
 function draw() {
-  // TODO: Fix the container height/width on mobile!
   var viewportHeight = (typeof window.innerHeight != 'undefined' ? window.innerHeight : document.body.offsetHeight);
   document.getElementById("container").setAttribute("style","height:" + viewportHeight + "px")
 

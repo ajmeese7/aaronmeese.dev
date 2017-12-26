@@ -8,7 +8,11 @@ canvas.height = screen.height;
 var matrix = "АБВГДЕЁЖЗИЙКЛМНОавгдеёжзийклмноПРСТУФХЦЧШЩЪЫЬЭЮЯпрстуфхцчшщъыьэюя";
 matrix = matrix.split('');
 
-var font_size = 10;
+// TODO: Make font look less blurry on mobile.
+var style = window.getComputedStyle(canvas, null).getPropertyValue('font-size');
+var font_size = parseFloat(style);
+canvas.style.fontSize = (font_size + 1) + 'px';
+
 var num_columns = canvas.width / font_size;
 var drops = [];
 
@@ -34,7 +38,7 @@ function draw() {
     var text = matrix[Math.floor(Math.random() * matrix.length)];
     ctx.fillText(text, i * font_size, drops[i] * font_size);
 
-    // TODO: Make it so there is more overlap on phones
+    // TODO: Make it so there is more overlap on phones!
 
     if (drops[i] * font_size > canvas.height && Math.random() > 0.975) {
       drops[i] = 0;

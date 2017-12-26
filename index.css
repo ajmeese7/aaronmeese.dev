@@ -15,19 +15,7 @@ body {
 canvas {
   display: block;
   z-index: -99;
-}
-
-/* TODO: Fix the falling letter size on mobile. Change word size? */
-@media only screen and (max-device-width: 600px) {
-  canvas {
-    width: 100%;
-    height: 100%;
-  }
-
-  #triangle {
-    width: 140px;
-    height: 140px;
-  }
+  font-size: 10px;
 }
 
 #intro {
@@ -39,4 +27,22 @@ canvas {
   top: 50%;
   transform: perspective(1px) translateY(-50%);
   text-align: center;
+}
+
+/* TODO: Remove canvas entirely on mobile? */
+@media only screen and (max-device-width: 600px) {
+  canvas {
+    width: 100%;
+    height: 100%;
+    font-size: 6.5px;
+  }
+
+  #triangle {
+    width: 140px;
+    height: 140px;
+  }
+
+  #intro {
+    font-size: 36px;
+  }
 }

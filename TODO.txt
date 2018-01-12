@@ -1,0 +1,2 @@
+- Add all TODOs from files to this list
+- Make it so the canvas adjusts when flipped from landscape to portrait and vice versa

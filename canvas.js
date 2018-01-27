@@ -1,5 +1,5 @@
 // Modified from http://steamcommunity.com/sharedfiles/filedetails/?id=892374811
-var canvas = document.getElementById("canvas");
+var canvas = document.getElementById("matrix");
 var ctx = canvas.getContext("2d");
 
 canvas.width = screen.width;

@@ -5,7 +5,8 @@ var ctx = canvas.getContext("2d");
 canvas.width = screen.width;
 canvas.height = screen.height;
 
-var matrix = "АБВГДЕЁЖЗИЙКЛМНОавгдеёжзийклмноПРСТУФХЦЧШЩЪЫЬЭЮЯпрстуфхцчшщъыьэюя";
+// Unicode Russian characters
+var matrix = "\u0402\u0403\u040A\u040B\u0411\u0414\u0416\u0419\u041B\u0423\u0424\u0426\u0429\u042A\u042E\u042F\u0434\u0436\u0444\u0452\u0457\u045C\u0461\u0463\u0464\u0466\u0468\u046A\u046E\u0471\u0472\u047A\u0481\u0482\u0483\u0494\u0498\u049C\u04A0\u04A8\u04B0\u04B4\u04FC\u04FD\u04FE\u04C7\u04C3\u04C1";
 matrix = matrix.split('');
 
 // TODO: Make font look less blurry on mobile.
@@ -39,6 +40,7 @@ function draw() {
     ctx.fillText(text, i * font_size, drops[i] * font_size);
 
     // TODO: Make it so there is more overlap on phones!
+    // ^ TODO: Set the speed to be 10 on mobile and 40 (dynamic) on desktop?
 
     if (drops[i] * font_size > canvas.height && Math.random() > 0.975) {
       drops[i] = 0;
@@ -48,4 +50,6 @@ function draw() {
   }
 }
 
-setInterval(draw, 35);
+// Makes it start off fast (to cover the whole screen) then slow down
+var interval = setInterval(draw, 10); // TODO: Figure out some math to make this exactly fit the SCREEN height on every device?
+setTimeout(function() { clearInterval(interval); setInterval(draw, 40); }, 1000);

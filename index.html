@@ -7,28 +7,64 @@
     <title>Aaron Meese</title>
 
     <!-- This is so I don't have to clear the cache while under development -->
-      <meta http-equiv=”Pragma” content=”no-cache”>
-      <meta http-equiv=”Expires” content=”-1″>
-      <meta http-equiv=”CACHE-CONTROL” content=”NO-CACHE”>
+    <meta http-equiv=”Pragma” content=”no-cache”>
+    <meta http-equiv=”Expires” content=”-1″>
+    <meta http-equiv=”CACHE-CONTROL” content=”NO-CACHE”>
     <!-- It will be removed when pushed to production -->
 
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <link rel="stylesheet" type="text/css" href="octocat.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/octocat.css" />
+    <link rel="stylesheet" type="text/css" href="css/scroll-down.css" />
+    
+    <!-- Social icons -->
+    <link rel="stylesheet" type="text/css" href="css/socialIcons.css" />
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+    
+    <script src="js/jquery-1.8.0.min.js"></script>
+    <script src="js/index.js"></script>
   </head>
   <body>
     <div id="container">
-      <canvas id="matrix"></canvas>
-      <script src="matrix.js"></script>
-      <a href="https://github.com/ajmeese7/legendary-octo-waffle" target="_blank" class="github-corner" aria-label="View source on Github">
-          <svg id="triangle" width="80" height="80" viewBox="0 0 250 250" style="fill:#fff; color:#151513; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
-            <path fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm" d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"></path>
-            <path fill="currentColor" class="octo-body" d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"></path>
-          </svg>
-      </a>
+        <canvas id="matrix"></canvas>
+        <script src="js/matrix.js"></script>
+        <a href="https://github.com/ajmeese7/legendary-octo-waffle" target="_blank" class="github-corner" aria-label="View source on Github">
+            <svg id="triangle" width="80" height="80" viewBox="0 0 250 250" style="fill:#fff; color:#151513; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+                <path fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm" d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"></path>
+                <path fill="currentColor" class="octo-body" d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"></path>
+            </svg>
+        </a>
 
-      <!-- TODO: Adjust font size/weight for larger screens (looks funny on desktop but good on laptop) -->
-      <h1 id="intro">Hello, I'm <span>Aaron Meese.</span></h1>
+        <h1 id="intro">Hello, I'm <span>Aaron Meese.</span></h1>
+        <a href="#aboutme" class="scroll-down" address="true"></a>
     </div>
+
+    <section id="aboutme">
+        <div id="profilePreview">
+            <img id="featureImg" src="images/wildAdventures.jpg" />
+            <p id="description">hacker, writer, programmer</p>
+
+            <div id="socialLinks">
+                <nav><ul>
+                    <li><a href="https://instagram.com/ajmeese7" class="icon fa-instagram" target="_blank"><span class="label">Instagram</span></a></li>
+                    <li><a href="https://www.linkedin.com/in/aaronmeese" class="icon fa-linkedin-square" target="_blank"><span class="label">LinkedIn</span></a></li>
+                    <li><a href="https://github.com/ajmeese7" class="icon fa-github" target="_blank"><span class="label">Github</span></a></li>
+                    <li><a href="mailto:ajmeese7@gmail.com" class="icon fa-envelope-o" target="_blank"><span class="label">Email</span></a></li>
+                    <li><a href="tel:+18507188243" class="icon fa-phone" target="_blank"><span class="label">Phone</span></a></li>
+                </ul></nav>
+            </div>
+        </div>
+
+        <div id="mediumFeed">
+            <!-- This is populated by the RSS script -->
+            <h2 id="feedTitle"></h2>
+        </div>
+
+        <script src="http://feed2js.org//feed2js.php?src=https%3A%2F%2Fmedium.com%2Ffeed%2F%40ajmeese7&chan=y&desc=1&date=y&targ=y&utf=y&html=a" charset="UTF-8" type="text/javascript"></script>
+        <noscript>
+            <!-- TODO -->
+        </noscript>
+
+    </section>
   </body>
 </html>

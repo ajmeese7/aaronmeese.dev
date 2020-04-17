@@ -144,7 +144,6 @@ section {
 }
 .rss-items li {
   list-style: none;
-  display: inline-block;
   margin-top: 12.5px;
   margin-left: 12.5px;
   margin-right: 7.5px;

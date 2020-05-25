@@ -53,7 +53,8 @@ canvas {
   height: 74px;
 }
 
-@media only screen and (max-device-width: 600px) {
+/* TODO: Tweak this a little further for breakpoints */
+@media only screen and (max-width: 750px) {
   canvas {
     width: 100%;
     height: 100%;
@@ -107,7 +108,7 @@ section {
 #profilePreview {
   margin-top: 25px;
   width: 300px;
-  float: left;
+  display: inline-block;
 }
 #featureImg {
   width: 100%;
@@ -118,13 +119,15 @@ section {
   text-align: center;
 }
 
-@media screen and (min-width: 1450px) {
+@media screen and (min-width: 1600px) {
   #mediumFeed {
+    /* TODO: Center the section content with this applied still */
     width: 60% !important;
   }
 }
 #mediumFeed {
   display: inline-block;
+  vertical-align: top;
   width: calc(95% - 325px);
   margin-top: 25px;
   margin-left: 50px;
@@ -164,6 +167,17 @@ section {
   /* Hiding at least temporarily until the images can look good */
   width: 150px;
   height: 100px;
+}
+
+#information {
+  margin-top: 10px;
+  padding-bottom: 50px;
+}
+#information p {
+  margin-bottom: 20px;
+}
+#information a, #information a:visited {
+  color: lightcoral;
 }
 
 /* #################

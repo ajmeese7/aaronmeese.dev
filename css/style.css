@@ -157,16 +157,11 @@ section {
 .rss-date {
   color: gray;
 }
-.medium-feed-link, .medium-feed-image img {
+.medium-feed-link {
   display: none;
 }
 .medium-feed-item {
   width: 100%;
-}
-.medium-feed-image img {
-  /* Hiding at least temporarily until the images can look good */
-  width: 150px;
-  height: 100px;
 }
 
 #information {
@@ -179,20 +174,3 @@ section {
 #information a, #information a:visited {
   color: lightcoral;
 }
-
-/* #################
-         STEAM
-   #################
-
-#steam {
-  background-color: #00adee;
-  margin-top: 200%;
-  height: 100%;
-}
-
-#profilePhoto {
-  border: 2px solid blue;
-  display: inline-block;
-}
-
-*/

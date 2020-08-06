@@ -1,3 +1,15 @@
+$.fn.immediateText = function() {
+    // https://stackoverflow.com/a/32170000/6456163
+    return this.contents().not(this.children()).text();
+};
+
+jQuery.fn.textNodes = function() {
+    // https://stackoverflow.com/a/4106957/6456163
+    return this.contents().filter(function() {
+      return (this.nodeType === Node.TEXT_NODE && this.nodeValue.trim() !== "");
+    });
+}
+
 $(function() {
     $('.scroll-down').click (function() {
         // TODO: Try to make it a little slower
@@ -6,26 +18,28 @@ $(function() {
     });
 
     // Set the article header to the RSS title
-    var articlesHeader = document.getElementById("feedTitle");
+    let articlesHeader = document.getElementById("feedTitle");
     $(".rss-title span").remove();
     $(".rss-title a").text("Stories on Medium");
     articlesHeader.innerHTML = $(".rss-title").html();
     $(".rss-box .rss-title").css("display", "none");
 
     // Remove all the elements that are comments and not articles
-    var articleMessage = "Continue reading on Medium »";
+    let articleMessage = "Continue reading on Medium »";
     $("li.rss-item").each(function(index, element) {
-        var currentText = $(this).text();
-
-        // Tests for if it's an article or a comment
-        if (!currentText.includes(articleMessage)) {
+        let text = $(this).immediateText();
+        if (!text.includes(articleMessage)) {
+            // Remove any comments, leaving only articles
             element.remove();
+        } else {
+            text = text.replace(articleMessage, "");
+            $(this).textNodes().first().replaceWith(text);
         }
     });
 
     // Copy data to my div and delete the script populated HTML
-    var mediumFeed = document.getElementById("mediumFeed");
-    var rssBox = document.getElementsByClassName("rss-box")[0].outerHTML;
+    let mediumFeed = document.getElementById("mediumFeed");
+    let rssBox = document.getElementsByClassName("rss-box")[0].outerHTML;
     mediumFeed.innerHTML += rssBox;
 
     // https://stackoverflow.com/a/15481533/6456163

@@ -12,8 +12,7 @@ jQuery.fn.textNodes = function() {
 
 $(function() {
     $('.scroll-down').click (function() {
-        // TODO: Try to make it a little slower
-        $('html, body').animate({scrollTop: $('#aboutme').offset().top }, 'slow');
+        $('html, body').animate({scrollTop: $('#aboutme').offset().top }, 750);
         return false;
     });
 

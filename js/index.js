@@ -25,14 +25,14 @@ $(function() {
     $(".rss-box .rss-title").css("display", "none");
 
     // Remove all the elements that are comments and not articles
-    let articleMessage = "Continue reading on Medium »";
+    let articleMessage = "Continue reading on ";
     $("li.rss-item").each(function(index, element) {
         let text = $(this).immediateText();
         if (!text.includes(articleMessage)) {
             // Remove any comments, leaving only articles
             element.remove();
         } else {
-            text = text.replace(articleMessage, "");
+            text = text.substring(0, text.lastIndexOf(articleMessage));
             $(this).textNodes().first().replaceWith(text);
         }
     });

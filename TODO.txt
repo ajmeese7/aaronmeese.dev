@@ -1,3 +1,0 @@
-- Add all TODOs from files to this list
-- Make it so the canvas adjusts when flipped from landscape to portrait and vice versa
-- Make sure the web server contains the default index (not dev) at ALL TIMES when not testing

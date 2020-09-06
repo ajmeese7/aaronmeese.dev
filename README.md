@@ -1,4 +1,4 @@
-# legendary-octo-waffle
+# aaronmeese.dev
 My [developer playground site](http://aaronmeese.dev), where I play around with unique 
 looks to showcase my credentials.As of my writing this, the website is basically a 
 placeholder and still has much work that needs to be done.

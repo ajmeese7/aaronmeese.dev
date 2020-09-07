@@ -11,6 +11,15 @@ jQuery.fn.textNodes = function() {
 }
 
 $(function() {
+    console.log(`
+    ░█████╗░░█████╗░██████╗░░█████╗░███╗░░██╗
+    ██╔══██╗██╔══██╗██╔══██╗██╔══██╗████╗░██║
+    ███████║███████║██████╔╝██║░░██║██╔██╗██║
+    ██╔══██║██╔══██║██╔══██╗██║░░██║██║╚████║
+    ██║░░██║██║░░██║██║░░██║╚█████╔╝██║░╚███║
+    ╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝░╚════╝░╚═╝░░╚══╝`);
+    console.log("Checking out the internals of my site? Come work with me!");
+
     $('.scroll-down').click (function() {
         $('html, body').animate({scrollTop: $('#aboutme').offset().top }, 750);
         return false;

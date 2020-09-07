@@ -33,6 +33,7 @@ canvas {
   color: white;
   /*font-family: Courier New;*/
   font-size: 28px;
+  font-weight: bold;
   position: absolute;
   width: 100%;
   top: 50%;

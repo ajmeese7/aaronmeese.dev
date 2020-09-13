@@ -12,9 +12,13 @@
 
     <!-- Without this the mobile site looks terrible -->
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta name="description" content="Looking for a developer with vision, talent, and team leadership abilities? That's unfortunate, all I have is great hair.">
     <meta name="keywords" content="aaron, meese, developer">
     <meta name="author" content="Aaron Meese">
+
+    <!-- TODO: Add more accessible tags like this -->
+    <meta name="description" content="Looking for a developer with vision, talent, and team leadership abilities? That's unfortunate, all I have is great hair.">
+    <meta property="og:description" content="Looking for a developer with vision, talent, and team leadership abilities? That's unfortunate, all I have is great hair.">
+    <meta name="twitter:description" content="Looking for a developer with vision, talent, and team leadership abilities? That's unfortunate, all I have is great hair.">
 
     <!-- Styles somewhat in order as you scroll down -->
     <link rel="stylesheet" type="text/css" href="css/octocat.css" />
@@ -37,6 +41,7 @@
     </script>
   </head>
   <body>
+    <p style="display: none;">Looking for a developer with vision, talent, and team leadership abilities? That's unfortunate, all I have is great hair.</p>
     <div id="container">
         <canvas id="matrix"></canvas>
         <script src="js/matrix.js"></script>
